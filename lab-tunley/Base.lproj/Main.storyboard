@@ -90,7 +90,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1932.06106870229" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="2858.7786259541986" y="3.5211267605633805"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="bFl-ES-Qfi">
@@ -231,7 +231,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hm6-RZ-mgj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2750.3816793893129" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="3677.0992366412211" y="3.5211267605633805"/>
         </scene>
         <!--Tracks-->
         <scene sceneID="pe2-cI-OjY">
@@ -250,7 +250,23 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EpX-XA-XKG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1127.4809160305342" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="2052.6717557251909" y="3.5211267605633805"/>
+        </scene>
+        <!--Albums-->
+        <scene sceneID="sln-QZ-0oD">
+            <objects>
+                <viewController id="jS3-N0-Lt7" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iB2-JE-m7A">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="XDK-f4-iAW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Albums" id="8mq-4Y-aL4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dww-5W-BKU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="388.54961832061065" y="3.5211267605633805"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Ug1-P1-k9V">
@@ -263,14 +279,35 @@
                     </tabBar>
                     <connections>
                         <segue destination="UX2-aM-6IO" kind="relationship" relationship="viewControllers" id="aUw-0d-6ED"/>
+                        <segue destination="Oxb-Ge-ucs" kind="relationship" relationship="viewControllers" id="Bb9-Kv-rLt"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wvP-It-i6C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="200.76335877862596" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="1216" y="4"/>
+        </scene>
+        <!--Albums-->
+        <scene sceneID="7M3-wm-2j4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Oxb-Ge-ucs" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Albums" image="guitars.fill" catalog="system" id="Fe8-mA-E1h"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Io3-xs-RTE">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jS3-N0-Lt7" kind="relationship" relationship="rootViewController" id="dsb-Xo-FZh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cc6-sU-DKt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-538.16793893129773" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>
+        <image name="guitars.fill" catalog="system" width="128" height="98"/>
         <image name="music.note.list" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
