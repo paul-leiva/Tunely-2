@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UX2-aM-6IO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TLP-VG-aG8">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -90,7 +90,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1005.3435114503816" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="1932.06106870229" y="3.5211267605633805"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="bFl-ES-Qfi">
@@ -231,12 +231,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hm6-RZ-mgj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1825" y="4"/>
+            <point key="canvasLocation" x="2750.3816793893129" y="3.5211267605633805"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Tracks-->
         <scene sceneID="pe2-cI-OjY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UX2-aM-6IO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Tracks" image="music.note.list" catalog="system" id="hVu-BR-Gxz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ma7-vM-Cho">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -249,10 +250,28 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EpX-XA-XKG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="202" y="4"/>
+            <point key="canvasLocation" x="1127.4809160305342" y="3.5211267605633805"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Ug1-P1-k9V">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="TLP-VG-aG8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="p51-L5-DSC">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="UX2-aM-6IO" kind="relationship" relationship="viewControllers" id="aUw-0d-6ED"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wvP-It-i6C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="200.76335877862596" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>
+        <image name="music.note.list" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
