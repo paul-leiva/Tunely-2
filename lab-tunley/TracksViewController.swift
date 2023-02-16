@@ -43,9 +43,28 @@ class TracksViewController: UIViewController, UITableViewDataSource {
             /// The `JSONSerialization.jsonObject(with: data)` method is a "throwing" function (meaning it can throw an error) so we wrap it in a `do` `catch`)
             /// We cast the returned object to a dictionary with a `String` key, `Any` value pair.
             do {
-                let jsonDictionary = try JSONSerialization.jsonObject(with: data) as? [String: Any]
+                /* let jsonDictionary = try JSONSerialization.jsonObject(with: data) as? [String: Any]
                 print("\n\njsonDictionary: \n\n")
-                print(jsonDictionary)
+                print(jsonDictionary) */
+                /// Create a JSON Decoder
+                let decoder = JSONDecoder()
+                
+                /// Create a Date Formatter
+                let dateFormatter = DateFormatter()
+                
+                /// Set a customer date format based on what we see coming back in the JSON
+                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+                
+                /// Set the decoding strategy on the JSON decoder to use our custom date format
+                decoder.dateDecodingStrategy = .formatted(dateFormatter)
+                
+                /// Use the JSON decoder to try and map the data to our custom model.
+                /// TrackResponse.self is a reference to the type itself, tells the decoder what to map to.
+                let response = try decoder.decode(TracksResponse.self, from: data)
+                
+                /// Access the array of tracks from the `results` property
+                let tracks = response.results
+                print("✅ \(tracks)")
             }
             catch {
                 print("Error parsing JSON: \(error.localizedDescription)")
