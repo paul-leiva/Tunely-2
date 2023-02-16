@@ -64,6 +64,18 @@ class TracksViewController: UIViewController, UITableViewDataSource {
                 
                 /// Access the array of tracks from the `results` property
                 let tracks = response.results
+                
+                /// Execute UI updates on the main thread when calling from a background callback
+                DispatchQueue.main.async {
+                    
+                    /// Set the ViewController's tracks property as this is the one the TableView references
+                    self?.tracks = tracks
+                    
+                    /// Make the TableView reload now that we have new data
+                    self?.tableView.reloadData()
+                }
+                
+                
                 print("✅ \(tracks)")
             }
             catch {
@@ -75,7 +87,7 @@ class TracksViewController: UIViewController, UITableViewDataSource {
         /// Initiate the network request
         task.resume()
         
-        // print(tracks)
+        print("\n\n👋 Below the closure\n\n")
 
         tableView.dataSource = self
         
@@ -118,17 +130,17 @@ class TracksViewController: UIViewController, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        // Get a cell with identifier, "TrackCell"
-        // the `dequeueReusableCell(withIdentifier:)` method just returns a generic UITableViewCell so it's necessary to cast it to our specific custom cell.
+        /// Get a cell with identifier, "TrackCell"
+        /// the `dequeueReusableCell(withIdentifier:)` method just returns a generic UITableViewCell so it's necessary to cast it to our specific custom cell.
         let cell = tableView.dequeueReusableCell(withIdentifier: "TrackCell", for: indexPath) as! TrackCell
 
-        // Get the track that corresponds to the table view row
+        /// Get the track that corresponds to the table view row
         let track = tracks[indexPath.row]
 
-        // Configure the cell with it's associated track
+        /// Configure the cell with it's associated track
         cell.configure(with: track)
 
-        // return the cell for display in the table view
+        /// return the cell for display in the table view
         return cell
     }
 }
