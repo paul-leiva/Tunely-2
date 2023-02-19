@@ -93,6 +93,30 @@ class AlbumsViewController: UIViewController, UICollectionViewDataSource {
         
         // Initiate the network request
         task.resume()
+        
+        /// Step 10: Updating the Collection View's Layout
+        // Get a reference to the Collection View's layout
+        // We want to dynamically size the cells for the available space and desired number of columns.
+        // NOTE: This Collection View scrolls vertically, but Collection Views can alternatively scroll horizontally.
+        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        
+        // The minimum spacing between adjacent cells (left/right, in vertical scrolling collection)
+        // Set this to taste.
+        layout.minimumInteritemSpacing = 4
+        
+        // The minimum spacing between adjacent cells (top/bottom, in vertical scrolling collection)
+        // Set this to taste
+        layout.minimumLineSpacing = 4
+        
+        // Set this to however many columns you want to show in the collection.
+        let numberOfColumns: CGFloat = 3
+        
+        // Calculate the width each cell needs to be to fit the number of columns, taking into account the spacing between cells.
+        let width = (collectionView.bounds.width - layout.minimumInteritemSpacing * (numberOfColumns - 1)) / numberOfColumns
+        
+        // Set the size that each item/cell should display at
+        layout.itemSize = CGSize(width: width, height: width)
+        
     }
     
 
