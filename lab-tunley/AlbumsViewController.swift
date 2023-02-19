@@ -6,9 +6,40 @@
 //
 
 import UIKit
+import Nuke // helps load album images
 
-class AlbumsViewController: UIViewController {
+class AlbumsViewController: UIViewController, UICollectionViewDataSource {
+    
+    // Tells the collectionView how many items to display
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        // the number of items show should eb the number of albums we have
+        albums.count
+    }
+    
+    // Creates, configures and returns the cell to display for a given index path
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        // Get a collection view cell (based in the identifier you set in storyboard) and cast it to our custom AlbumCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AlbumCell", for: indexPath) as! AlbumCell
+        
+        // Use the indexPath.item to index into the albums array to get the corresponding album
+        let album = albums[indexPath.item]
+        
+        // Get the artwork image URL
+        let imageUrl = album.artworkUrl100
+        
+        // Set the image on the Image View of the cell
+        Nuke.loadImage(with: imageUrl, into: cell.albumImageView)
+        
+        // return the cell
+        return cell
+    }
+    
 
+    // Outlet for CollectionView
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     // Add property to hold array of albums we get back
     var albums: [Album] = []
     
@@ -16,6 +47,9 @@ class AlbumsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // Set the delegate for the collection view
+        collectionView.dataSource = self
         
         /// Create a searhc URL for fetching albums (`entity = album`)
         let url = URL(string: "https://itunes.apple.com/search?term=blackpink&attribute=artistTerm&entity=album&media=music")!
@@ -43,7 +77,13 @@ class AlbumsViewController: UIViewController {
                 
                 print("\n\nAlbums:\n\n")
                 print(albums)
-                self?.albums = albums
+                
+                
+                // Explicityly update the albums collection view in the main thread (UI updates not allowed in background threads)
+                DispatchQueue.main.async {
+                    self?.albums = albums
+                    self?.collectionView.reloadData() // Reload data after we set the albums property
+                }
             }
             catch {
                 print(error.localizedDescription)
