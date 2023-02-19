@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C8AD45E029A1F8A600FDCC20 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AD45DF29A1F8A600FDCC20 /* AlbumsViewController.swift */; };
 		C8AD45E229A2017A00FDCC20 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AD45E129A2017A00FDCC20 /* Album.swift */; };
+		C8AD45E429A2068300FDCC20 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AD45E329A2068300FDCC20 /* AlbumCell.swift */; };
 		CB7254DF2939D37800F531FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7254DE2939D37800F531FB /* AppDelegate.swift */; };
 		CB7254E12939D37800F531FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7254E02939D37800F531FB /* SceneDelegate.swift */; };
 		CB7254E32939D37800F531FB /* TracksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7254E22939D37800F531FB /* TracksViewController.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		C8AD45DF29A1F8A600FDCC20 /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
 		C8AD45E129A2017A00FDCC20 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		C8AD45E329A2068300FDCC20 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 		CB7254DB2939D37800F531FB /* lab-tunley.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "lab-tunley.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB7254DE2939D37800F531FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB7254E02939D37800F531FB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				CB7254DE2939D37800F531FB /* AppDelegate.swift */,
 				CB7254E02939D37800F531FB /* SceneDelegate.swift */,
 				CB7254E42939D37800F531FB /* Main.storyboard */,
+				C8AD45E329A2068300FDCC20 /* AlbumCell.swift */,
 				CB7254E72939D37A00F531FB /* Assets.xcassets */,
 				CB7254E92939D37A00F531FB /* LaunchScreen.storyboard */,
 				CB7254EC2939D37A00F531FB /* Info.plist */,
@@ -177,6 +180,7 @@
 				CB7254E12939D37800F531FB /* SceneDelegate.swift in Sources */,
 				CB7254F6293B224000F531FB /* Track.swift in Sources */,
 				C8AD45E229A2017A00FDCC20 /* Album.swift in Sources */,
+				C8AD45E429A2068300FDCC20 /* AlbumCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
