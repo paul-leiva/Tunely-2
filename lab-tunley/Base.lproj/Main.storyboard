@@ -255,7 +255,7 @@
         <!--Albums-->
         <scene sceneID="sln-QZ-0oD">
             <objects>
-                <viewController id="jS3-N0-Lt7" sceneMemberID="viewController">
+                <viewController id="jS3-N0-Lt7" customClass="AlbumsViewController" customModule="lab_tunley" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iB2-JE-m7A">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
